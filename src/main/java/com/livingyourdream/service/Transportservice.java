@@ -72,43 +72,7 @@ public class Transportservice {
         return seatrepo.findByVehicleNo(vehicleNo);
     }
 
-//    public String bookSeats(List<Long> seatIds, Long userId) {
-//        BigDecimal totalPrice = BigDecimal.ZERO;
-//
-//        // Validate all seats
-//        String vehicleNo = null;
-//        for (Long seatId : seatIds) {
-//            Seat seat = seatrepo.findById(seatId).orElse(null);
-//
-//            if (seat == null || seat.getStatus() == SeatStatus.BOOKED) {
-//                return "One or more selected seats are unavailable or invalid.";
-//            }
-//
-//            if (vehicleNo == null) {
-//                vehicleNo = seat.getVehicleNo();
-//            } else if (!vehicleNo.equals(seat.getVehicleNo())) {
-//                return "All selected seats must belong to the same vehicle.";
-//            }
-//        }
-//
-//        Transport transport = transportrepo.findByVehicleNo(vehicleNo).orElse(null);
-//        if (transport == null || transport.getPrice() == null) {
-//            return "Transport not found or has invalid price.";
-//        }
-//
-//        // Book all seats
-//        for (Long seatId : seatIds) {
-//            Seat seat = seatrepo.findById(seatId).get();
-//            seat.setStatus(SeatStatus.BOOKED);
-//            seat.setUserId(userId);
-//            seatrepo.save(seat);
-//            BigDecimal price = transport.getPrice() == null ? BigDecimal.ZERO : BigDecimal.valueOf(transport.getPrice());
-//
-//            totalPrice = totalPrice.add(price);
-//        }
-//
-//        return "Seats booked successfully! Total cost: ₹" + totalPrice;
-//    }
+
 
     public List<Seat> addseats(Long transportId, List<Seat> seats) {
         Transport transport = transportrepo.findById(transportId)
