@@ -41,12 +41,6 @@ public class Bookingservice {
     @Transactional
     public Booking createBooking(BookingRequestDTO dto, Authentication authentication) {
        Booking booking = new Booking();
-//
-//        booking.setBooking_date(LocalDate.now());
-//        booking.setStatus(dto.getStatus());
-//        booking.setStartDate(plan.getStartDate());
-//        booking.setEndDate(plan.getEndDate());
-//
 
         String username = authentication.getName();
         User user = userrepo.findByUsername(username)
