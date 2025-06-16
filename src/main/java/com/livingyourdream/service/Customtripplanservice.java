@@ -156,25 +156,6 @@ public class Customtripplanservice {
         return customtripplanrepo.save(plan);
     }
 
-//           if (plan.getCheckInDate() == null || plan.getCheckOutDate() == null)
-//               throw new RuntimeException("Check-in and check-out dates must be provided");
-//
-//           long nights = ChronoUnit.DAYS.between(plan.getCheckInDate(), plan.getCheckOutDate());
-//           if (nights <= 0) throw new RuntimeException("Check-out date must be after check-in date");
-//
-//           plan.setDuration_days((int) nights);
-//
-//           int guests = plan.getPeopleCount();
-//           double stayCost = 0.0;
-//
-//           for (Stay stay : fullStay) {
-//               int numberOfRooms = stay.getType().equalsIgnoreCase("Resort") ? 1 : (int) Math.ceil(guests / 2.0);
-//               double cost = stay.getPrice() * numberOfRooms * nights;
-//               stayCost += cost;
-//           }
-    // double totalCost = transportcost + stayCost;
-    //  plan.setTotalCost(totalCost);
-
     public List<Customtripplan> getAllPlans() {
         return customtripplanrepo.findAll();
     }
