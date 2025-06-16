@@ -30,18 +30,6 @@ public class StayController {
         return ResponseEntity.ok(stayservice.createstay(stay));
     }
 
-//    @PreAuthorize("hasRole('ADMIN')")
-//    @PostMapping("/default/{defaultTripId}/stay")
-//    public ResponseEntity<Stay> addTransportToDefault(@PathVariable Long defaultTripId, @RequestBody Stay stay){
-//        return ResponseEntity.ok(stayservice.addStayToDefaultPlan(defaultTripId,stay));
-//    }
-//
-//    @PreAuthorize("hasRole('ADMIN')")
-//    @PostMapping("/custom/{customTripId}/stay/{stayId}")
-//    public ResponseEntity<Customtripplan> addStayToCustom(@PathVariable Long customTripId, @PathVariable Long stayId) {
-//        return ResponseEntity.ok(stayservice.addStayToCustomPlan(stayId, customTripId));
-//    }
-
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}")
     public ResponseEntity<Stay> updatestay(@PathVariable Long id, @RequestBody Stay stay){
